@@ -1,0 +1,78 @@
+<ejs-treegrid 
+  [dataSource]="data" 
+  childMapping="subtasks" 
+  [treeColumnIndex]="1"
+  [allowPaging]='true'
+  [pageSettings]="pageSettings"
+  [allowSorting]="true"
+  [sortSettings]="sortSettings"
+  [allowFiltering]="true"
+  [editSettings]="editSettings"
+  [toolbar]="toolbar"
+>
+  <e-columns>
+    <e-column 
+      field='taskID' 
+      headerText='Task ID' 
+      textAlign='Right' 
+      width='120'
+      isPrimaryKey="true"
+    ></e-column>
+    <e-column 
+      field='taskName' 
+      headerText='Task Name' 
+      textAlign='Left' 
+      width='160'
+    ></e-column>
+    <e-column 
+      field='startDate' 
+      headerText='Start Date' 
+      textAlign='Right' 
+      width='100'
+      format="yMd"
+      editType="datepickeredit"
+    ></e-column>
+    <e-column 
+      field='endDate' 
+      headerText='End Date' 
+      textAlign='Right' 
+      width='100'
+      format="yMd"
+      editType="datepickeredit"
+    ></e-column>
+    <e-column 
+      field='progress' 
+      headerText='Progress' 
+      textAlign='Right' 
+      width='100'
+    ></e-column>
+    <e-column 
+      field='duration' 
+      headerText='Duration' 
+      textAlign='Right' 
+      width='100'
+      editType="numericedit"
+      [edit]="numericParams"
+    ></e-column>
+    <e-column 
+      field='priority' 
+      headerText='Priority' 
+      textAlign='Right' 
+      width='100'
+    ></e-column>
+    <e-column 
+      field='approved' 
+      headerText='Approved' 
+      textAlign='Right' 
+      width='100'
+      editType="booleanedit"
+    ></e-column>
+    <e-column 
+      field='isInExpandState' 
+      headerText='IsInExpandState' 
+      textAlign='Right' 
+      width='100'
+    ></e-column>
+    <e-column headerText='Manage Records' width='150' [commands]='commands'></e-column>
+  </e-columns>
+</ejs-treegrid>
